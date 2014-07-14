@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Facepunch Editor Fixer
 // @namespace   https://nanderson.me/
-// @version     0.5
+// @version     0.6
 // @description Unicode have you feeling down? Not anymore!
 // @match       http://*facepunch.com/editpost.php*
 // @match       http://*facepunch.com/showthread.php*
@@ -34,7 +34,7 @@ $(function() {
       LPPPP = 30, // LabPunch Posts Per Page
       lpPage = Math.floor( postNum / LPPPP ),
       threadId = $('.navbit:last > a').attr('href').match(/t=([0-9]+)/)[1],
-      postId = postId window.location.href.match(/[0-9]+/);
+      postId = window.location.href.match(/[0-9]+/);
     // Double check the editor, is it empty?
     if ($('#vB_Editor_001_editor').text().length == 0) {
       // So we probably encountered the unicode problem, let's fix it!
