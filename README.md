@@ -3,7 +3,7 @@ Facepunch Editor Fixer
 
 Because all of life's problems can be solved with userscripts
 
-Facepunch thread: *TO BE POSTED*
+Facepunch thread: [http://facepunch.com/showthread.php?t=1409244](http://facepunch.com/showthread.php?t=1409244)
 
 License
 =======
