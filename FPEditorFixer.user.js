@@ -1,12 +1,15 @@
 // ==UserScript==
-// @name       Facepunch Editor Fixer
-// @namespace  https://nanderson.me/
-// @version    0.5
-// @description  Unicode have you feeling down? Not anymore!
-// @match      http://*facepunch.com/editpost.php*
-// @match      http://*facepunch.com/showthread.php*
-// @copyright  2014, deadeye536
-// @license WTFPL
+// @name        Facepunch Editor Fixer
+// @namespace   https://nanderson.me/
+// @version     0.5
+// @description Unicode have you feeling down? Not anymore!
+// @match       http://*facepunch.com/editpost.php*
+// @match       http://*facepunch.com/showthread.php*
+// @updateURL   https://raw.githubusercontent.com/nanderson94/FPEditorFixer/master/FPEditorFixer.user.js
+// @downloadURL https://raw.githubusercontent.com/nanderson94/FPEditorFixer/master/FPEditorFixer.user.js
+// @run-at      document-end
+// @copyright   2014, deadeye536
+// @license     WTFPL
 // ==/UserScript==
 
 // Begin terrible userscript
