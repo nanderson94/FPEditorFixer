@@ -3,7 +3,7 @@
 // @namespace   https://nanderson.me/
 // @version     0.7
 // @description Unicode have you feeling down? Not anymore!
-// @match       http:\/\/(www\.)?facepunch.com\/(editpost|showthread)\.php*
+// @include     /^http://(www\.)?facepunch.com\/(editpost|showthread)\.php*/
 // @updateURL   https://raw.githubusercontent.com/nanderson94/FPEditorFixer/master/FPEditorFixer.user.js
 // @downloadURL https://raw.githubusercontent.com/nanderson94/FPEditorFixer/master/FPEditorFixer.user.js
 // @run-at      document-end
