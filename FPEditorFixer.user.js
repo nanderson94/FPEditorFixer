@@ -10,6 +10,8 @@
 // @updateURL   https://raw.githubusercontent.com/nanderson94/FPEditorFixer/master/FPEditorFixer.user.js
 // @downloadURL https://raw.githubusercontent.com/nanderson94/FPEditorFixer/master/FPEditorFixer.user.js
 // @run-at      document-end
+// @grant       GM_xmlhttpRequest
+// @grant       unsafeWindow
 // @copyright   2014, deadeye536
 // @license     WTFPL
 // ==/UserScript==
