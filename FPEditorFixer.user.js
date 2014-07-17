@@ -11,7 +11,9 @@
 // @downloadURL https://raw.githubusercontent.com/nanderson94/FPEditorFixer/master/FPEditorFixer.user.js
 // @run-at      document-end
 // @grant       GM_xmlhttpRequest
-// @grant       unsafeWindow
+// @grant       GM_setValue
+// @grant       GM_getValue
+// @require     //ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js
 // @copyright   2014, deadeye536
 // @license     WTFPL
 // ==/UserScript==
@@ -28,13 +30,13 @@ $(function() {
   // Additionally, we capture the .editpost click to store details about
   // the post that we need, but can only get on the listing page.
   $(".editpost").click(function(e) {
-    localStorage['FP_EditFix'] = $(e.target).parents('.postcontainer').find('.nodecontrols > a[href^=showthread.php]').text().match(/[0-9]+/);
+    GM_setValue("lastPostId", $(e.target).parents('.postcontainer').find('.nodecontrols > a[href^=showthread.php]').text().match(/[0-9]+/));
     // Let the redirection to editpost happen.
     return true;
   });
   // We are on the editor page, did we get here from a .editpost?
   if (window.location.href.match('editpost') && localStorage['FP_EditFix']) {
-    var postNum = parseInt(localStorage['FP_EditFix'], 10),
+    var postNum = parseInt(GM_getValue("lastPostId"), 10),
       LPPPP = 30, // LabPunch Posts Per Page
       // +1 because pages are not zero-indexed
       lpPage = Math.floor( postNum / LPPPP ) + 1,
@@ -49,9 +51,7 @@ $(function() {
           method:"GET",
           url:"http://lab.facepunch.com/api/post/list/?threadid="+threadId+"&page="+lpPage,
           onload:function(res) {
-            console.log(res);
             var data = JSON.parse(res.responseText);
-            console.log(data);
             for (var i=0,len=data['data']['posts'].length;i<len;i++) {
               if (data['data']['posts'][i]['postid'] == postId) {
                 // Alright, we finally found the post!
